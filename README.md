@@ -2,7 +2,7 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2022-09-07 15:48:36
+ * @LastEditTime: 2022-09-07 17:35:08
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -180,6 +180,15 @@ ts-node:在内部实现了TS->JS
 
   注意：**字符串枚举没有自增长行为，因此，字符串枚举的每个成员必须有初始值**
   > enum Direction{Up='Up',Down='Down',Left='Left',Right='Right'}
+
+  说明：枚举与前面讲的字面量类型+联合类型组合的功能类似，都用来表示一组明确的可选值列表
+
+  一般情况下，推荐使用**字面量类型+联合类型组合的方式**，因为相比较枚举，这种方式更加直观、简洁、高效
+
+
+---
+
+ # any  类型
 
 ---
 
