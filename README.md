@@ -2,7 +2,7 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2022-09-07 13:44:00
+ * @LastEditTime: 2022-09-07 15:48:36
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -117,6 +117,72 @@ ts-node:在内部实现了TS->JS
 
 
 ---
+
+  # 类型推论
+
+  在TS中，某些没有明确支出类型的地方，TS的**类型推论机制会帮助提供类型**
+  话句话说，由于类型推论的存在，这些地方，类型注解可省略不写
+  发生类型推论的2种常见场景：
+  1.声明变量**并初始化时**
+  2.决定函数返回值时
+
+
+
+
+---
+
+  # 类型断言
+
+  1. 使用**as**关键字实现类型断言
+  2. 关键字**as**后面的类型是一个更加具体的类型（HTMLAnchorElement是HTMLElement的子类型）
+  3. 通过类型断言，aLink的类型变得更加具体，这样就可以访问a标签特有的属性或方法了
+    > const aLink=document.getElementById('link') as HTMLAnchorElement
+
+---
+
+  # 字面量类型
+
+  >let str1='hello ts'
+   const str2='hello ts2'
+
+  通过TS类型推论机制，可以得到答案：
+  1.变量str1 的类型为：string
+  2.变量str2 的类型为：'hello ts2'
+
+  解释：
+  1. str1 是一个变量（let) , 它的值可以是任意的字符串，所以类型为：string
+  2. str2 是一个常量（const),它的值不能变化只能是'hello ts2'，所以，它的类型为:'hello ts2'
+   
+  注意：此处的'hello ts',就是一个**字面量类型**，也就是说**某个特定的字符串也可以作为TS中的类型**。除字符串外，任意的JS字面量（比如：对象、数组等）都可以作为类型使用。
+
+  **使用模式：字面量类型配合联合类型一起使用**
+  
+  **使用场景：用来表示一组明确的可选值列表**
+
+---
+
+  # 枚举
+
+  解释：
+   
+  * 使用enum关键字定义枚举
+
+  * 约定枚举名称、枚举中的值以**大写字母**开头
+
+  * 枚举中的多个值之间通过,分隔
+
+
+**数字枚举**
+  > enum Direction{Up=10,Down,Left,Right}
+      enum Direction{Up=2,Down=4,Left=8,Right=16}
+
+**字符串枚举**
+
+  注意：**字符串枚举没有自增长行为，因此，字符串枚举的每个成员必须有初始值**
+  > enum Direction{Up='Up',Down='Down',Left='Left',Right='Right'}
+
+---
+
 *italic*
 **bold**
 
