@@ -2,11 +2,19 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2022-09-07 17:55:51
+ * @LastEditTime: 2022-09-08 17:34:17
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
-#TYPESCRIPT  MARKDOWN https://www.bilibili.com/video/BV14Z4y1u7pi?p=15&spm_id_from=pageDriver&vd_source=874ef91701c817855be9727acd96b7cd
+<!--
+ * @Author: 15868707168@163.com 15868707168@163.com
+ * @Date: 2022-09-06 11:22:17
+ * @LastEditors: 15868707168@163.com 15868707168@163.com
+ * @LastEditTime: 2022-09-08 13:58:35
+ * @FilePath: \TS_PROJECT\README.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+#TYPESCRIPT 类型注解  MARKDOWN https://www.bilibili.com/video/BV14Z4y1u7pi?p=15&spm_id_from=pageDriver&vd_source=874ef91701c817855be9727acd96b7cd
 ---
 # 运行TS的步骤  
 
@@ -194,8 +202,103 @@ ts-node:在内部实现了TS->JS
 
   # typeof
 
+  *  **typeof** 出现在类型注解的位置（参数名称的冒号后面）所处的环境就在类型的上下文（区别于JS代码）
+  *  注意：typeof只能用来查询变量或属性的类型，无法查询其他形式的类型（比如，函数调用的类型）
+
+
+---
+  # TS中的高级类型
+
+  1. class 类
+  2. 类型兼容性
+  3. 交叉类型
+  4. 泛型和keyof
+  5. 索引签名类型和索引查询类型
+  6. 映射类型
+
+
 ---
 
+  # class 类
+
+  > class Person{}
+    const p=new Person()
+
+  1. 根据TS中的类型推论，可以知道Person类的实例对象p的类型是Person
+  2. TS中的**class,不仅提供了class的语法功能，也作为一种类型存在**
+
+
+  **类继承的两种方式：** 1.extends (继承父类) 2.implements(实现接口)
+
+  class:
+    **修饰符**：可以使用TS来控制**class的方法或属性对于class外的代码是否可见**
+    可见性修饰符包括:1.public(共有的) 2.protected(受保护的) 3.private(私有的)
+
+  * protected: 在子类的方法内部可以通过this来访问父类中受保护的成员，但是，**对实例不可见**
+  
+  * private:私有的属性或者方法只在当前类中可见，在子类和实例中不可见
+  
+  * readonly:表示只读，用来**防止在构造函数之外对属性进行赋值**
+             **接口或者{}表示的对象类型，也可以使用readonly**
+
+  implement:
+  1. 通过implements 关键字让class实现接口
+  2. Person 类实现接口Singable意味着，Person类中必须提供Singable接口中
+     **指定的所有方法和属性**
+  
+---
+
+  # 类型兼容性
+
+  两种类型兼容性： 1 Structural Type System (结构化类型系统)  2 Nominal Type System(标明类型系统)
+
+  **TS采用的是结构化类型系统**，也叫做duck typing(鸭子类型),**类型检测关注的是值所具有的形状**  
+
+  类型兼容性：
+
+  注意：在结构化类型系统中，如果两个对象具有相同的形状，则认为它们属于同一类型，这种说法不准确。**更准确的说法：对于对象类型来说，y的成员至少与x相同，则x兼容y(成员多的可以赋值给少的)**
+
+  **函数之间兼容性比较复杂**，需要考虑：1参数个数 2参数类型  3返回值类型
+
+
+---
+
+  # 交叉类型
+
+  **交叉类型（&）**：功能类似于接口继承(extends)，**用于组合多个类型为一个类型(常用于对象类型)**
+
+  > interface Person {name:string}
+    interface Contact {phone:string}
+    type PersonDetail=Person & Contact
+    let obj:PersonDetail={
+      name:'jack',
+      phone:'122...'
+    }
+
+---
+  # 泛型
+  
+  > //function id<Type>(value:Type):void{
+    console.log(value)
+  }
+  > //const id:<Type>(value:Type) => void=(value) => {  console.log(value) }
+  const id=<Type>(value:Type):void => { console.log(value) }
+  const id2=<Type>(value:Type):Type => {return value }
+  id(1)
+  id<string>('xiaoming')
+
+  **泛型约束**:默认情况下，泛型函数的类型变量Type可以代表多个类型，这导致无法访问属性。
+  比如 id('a')调用函数式获取参数的长度
+
+  > const id=<Type>(value:Type):Type => { 
+      console.log(value.length)
+      return value
+  }
+
+  解释：Type可以代表任意类型，无法保证一定存在length属性，比如number类型就没有length。
+  此时，就需要为泛型**添加约束**来收缩类型(缩窄类型取值范围)
+
+---
 *italic*
 **bold**
 
