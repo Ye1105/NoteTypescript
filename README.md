@@ -2,7 +2,7 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2022-09-08 17:34:17
+ * @LastEditTime: 2022-09-09 12:51:43
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -297,6 +297,69 @@ ts-node:在内部实现了TS->JS
 
   解释：Type可以代表任意类型，无法保证一定存在length属性，比如number类型就没有length。
   此时，就需要为泛型**添加约束**来收缩类型(缩窄类型取值范围)
+
+
+>interface ILength{length:number}
+function id<Type extends ILength>(value:Type):Type{
+    console.log(value.length)
+    return value
+}
+
+解释：
+1. 创建描述约束的接口ILength，该接口要求提供length属性
+2. 通过 **extends** 关键字使用该接口，为泛型（类型变量）添加约束
+3. 该约束表示 ：**传入的类型必须具有length属性**
+
+
+泛型的类型变量可以有多个，并且**变量之间还可以约束**(比如，第二个类型变量受第一个类型变量的约束)，
+比如，创建一个函数来获取对象中属性的值
+
+>function getProp<Type,Key extends keyof Type>(obj:Type,key:Key){
+    return obj[key]
+}
+let person={name:'xiaoye',age:18}
+console.log(getProp(person,'name'))
+
+解释：
+1. 添加了第二个类型变量Key,连个类型变量之间使用(,)**逗号**分隔
+2. keyof 关键字 接收一个对象类型，生成其键名称(可能是字符串或数字)的联合类型
+3. 类型变量Key受Type约束，可以理解为：Key只能是Type所有键中的任意一个，或者说只能访问对象中存在的属性
+
+
+**泛型接口**:接口也可以配合泛型来使用，以增强其灵活性，增强其复用性
+
+>interface IdFunc<Type>{
+    id:(value:Type) => Type
+    ids:() => Type[]
+}
+let obj:IdFunc<String>={
+    id: function (value: String): String {
+        throw new Error("Function not implemented.")
+    },
+    ids: function (): String[] {
+        //throw new Error("Function not implemented.")
+        return ['1']
+    }
+}
+obj.ids
+
+解释：
+1. 在接口名称的后面添加<类型变量>,那么,这个接口就变成了泛型接口
+2. 接口的类型变量，对接口汇总所有其他成员可见，也就是**接口中所有成员都可以使用类型变量**
+3. 使用泛型接口时，需要**显示指定**具体的**类型**(比如：此处的IdFunc<number>)
+   
+
+**泛型工具类型**
+
+Partial: **Partial<Type> 用来构造（创建）一个类型，将Type的所有属性设置为可选**
+
+Readonly: **Readonly<Type> 用来构造一个类型，将Type的所有属性都设置为readonly(只读)**
+
+Pick<Type,Keys>: **从Type中选择一组属性来构造新类型**
+
+Record<Keys,Type>: **构造一个对象类型，属性键位Keys,属性类型为Type**
+
+**索引签名类型**
 
 ---
 *italic*
