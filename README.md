@@ -2,7 +2,7 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2022-09-09 12:51:43
+ * @LastEditTime: 2022-09-13 11:11:49
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -360,6 +360,16 @@ Pick<Type,Keys>: **从Type中选择一组属性来构造新类型**
 Record<Keys,Type>: **构造一个对象类型，属性键位Keys,属性类型为Type**
 
 **索引签名类型**
+---
+
+ # namespace
+
+  >namespace a{
+    export class Person{
+      name:string
+    }
+  }
+  let person=new a.Person()
 
 ---
 *italic*
