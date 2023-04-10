@@ -2,7 +2,7 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2023-04-07 14:49:26
+ * @LastEditTime: 2023-04-10 13:16:21
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -15,6 +15,9 @@
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 #TYPESCRIPT 类型注解 
+
+
+[TypeScrpit官网](https://www.typescriptlang.org/)
 
 [TypeScript参考教程](https://docs.cocos.com/creator/manual/zh/scripting/language-support.html)
 

@@ -8,37 +8,37 @@
  */
 
 
-interface Props<Type>{
-    id:Type,
-    children:Type[]
+interface Props<Type> {
+    id: Type,
+    children: Type[]
 }
 
-type MyProps=Partial<Props<number>>
+type MyProps = Partial<Props<number>>
 
-let p1:Props<number>={
+let p1: Props<number> = {
     id: 0,
     children: []
 }
 
-let p2:MyProps={}
+let p2: MyProps = {}
 
 /* ----------------------------------------------- */
 
 
-interface Props2{
-    id:string,
-    title:string,
-    name:string
+interface Props2 {
+    id: string,
+    title: string,
+    name: string
 }
 
-type PickProps=Pick<Props2,'id'|'title'>
+type PickProps = Pick<Props2, 'id' | 'title'>
 
 
 /* ----------------------------------------------- */
 
 
-type RecordObj=Partial<Record<'id'|'name',string>>
+type RecordObj = Partial<Record<'id' | 'name', string>>
 
-let obj:RecordObj={
+let obj: RecordObj = {
     id: ""
 }
