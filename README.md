@@ -2,7 +2,7 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2023-04-10 13:16:21
+ * @LastEditTime: 2023-05-08 11:01:38
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -14,7 +14,7 @@
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
-#TYPESCRIPT 类型注解 
+## TYPESCRIPT 类型注解 
 
 
 [TypeScrpit官网](https://www.typescriptlang.org/)
@@ -371,8 +371,6 @@ Record<Keys,Type>: **构造一个对象类型，属性键位Keys,属性类型为
 ---
 *italic*
 **bold**
-
-![目标文本](目标地址)
 
 [github](http://github.com)
 
