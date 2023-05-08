@@ -9,11 +9,11 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2022-09-08 13:58:35
+ * @LastEditTime: 2023-05-08 11:14:52
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
-## TYPESCRIPT 类型注解 
+# TYPESCRIPT 类型注解 
 
 
 [TypeScrpit官网](https://www.typescriptlang.org/)
@@ -125,14 +125,14 @@ ts-node:在内部实现了TS->JS
   
 ---
 
-  # 元组 Tuple
+# 元组 Tuple
 
   * 元组类型可以确切地标记出有多少个元素，以及每个元素的类型
 
 
 ---
 
-  # 类型推论
+# 类型推论
 
   在TS中，某些没有明确支出类型的地方，TS的**类型推论机制会帮助提供类型**
   话句话说，由于类型推论的存在，这些地方，类型注解可省略不写
@@ -145,7 +145,7 @@ ts-node:在内部实现了TS->JS
 
 ---
 
-  # 类型断言
+# 类型断言
 
   1. 使用**as**关键字实现类型断言
   2. 关键字**as**后面的类型是一个更加具体的类型（HTMLAnchorElement是HTMLElement的子类型）
@@ -154,7 +154,7 @@ ts-node:在内部实现了TS->JS
 
 ---
 
-  # 字面量类型
+# 字面量类型
 
   >let str1='hello ts'
    const str2='hello ts2'
@@ -175,7 +175,7 @@ ts-node:在内部实现了TS->JS
 
 ---
 
-  # 枚举
+# 枚举
 
   解释：
    
@@ -202,18 +202,18 @@ ts-node:在内部实现了TS->JS
 
 ---
 
- # any  类型
+# any  类型
 
 ---
 
-  # typeof
+# typeof
 
   *  **typeof** 出现在类型注解的位置（参数名称的冒号后面）所处的环境就在类型的上下文（区别于JS代码）
   *  注意：typeof只能用来查询变量或属性的类型，无法查询其他形式的类型（比如，函数调用的类型）
 
 
 ---
-  # TS中的高级类型
+# TS中的高级类型
 
   1. class 类
   2. 类型兼容性
@@ -225,7 +225,7 @@ ts-node:在内部实现了TS->JS
 
 ---
 
-  # class 类
+# class 类
 
   > class Person{}
     const p=new Person()
@@ -254,7 +254,7 @@ ts-node:在内部实现了TS->JS
   
 ---
 
-  # 类型兼容性
+# 类型兼容性
 
   两种类型兼容性： 1 Structural Type System (结构化类型系统)  2 Nominal Type System(标明类型系统)
 
@@ -269,7 +269,7 @@ ts-node:在内部实现了TS->JS
 
 ---
 
-  # 交叉类型
+# 交叉类型
 
   **交叉类型（&）**：功能类似于接口继承(extends)，**用于组合多个类型为一个类型(常用于对象类型)**
 
@@ -282,7 +282,7 @@ ts-node:在内部实现了TS->JS
     }
 
 ---
-  # 泛型
+# 泛型
   
   > //function id<Type>(value:Type):void{
     console.log(value)
@@ -368,7 +368,7 @@ Record<Keys,Type>: **构造一个对象类型，属性键位Keys,属性类型为
 **索引签名类型**
 ---
 
- # namespace
+# 命名空间
 
   >namespace a{
     export class Person{
