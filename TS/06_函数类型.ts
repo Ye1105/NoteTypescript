@@ -2,7 +2,7 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 17:52:55
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2022-09-07 10:17:02
+ * @LastEditTime: 2022-09-13 11:43:00
  * @FilePath: \TS_PROJECT\06_函数类型.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -39,3 +39,12 @@ const mySlice:(start?:number,end?:number)=>void=(start,end)=> {
 
 mySlice(1)
 mySlice(1,2)
+
+
+function fun(func:Function){
+    func()
+}
+
+function fun2(func:()=>{}){
+    func()
+}
