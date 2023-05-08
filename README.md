@@ -2,7 +2,6 @@
  * @Author: 15868707168@163.com 15868707168@163.com
  * @Date: 2022-09-06 11:22:17
  * @LastEditors: 15868707168@163.com 15868707168@163.com
- * @LastEditTime: 2022-09-13 11:11:49
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -14,7 +13,14 @@
  * @FilePath: \TS_PROJECT\README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
-#TYPESCRIPT 类型注解  MARKDOWN https://www.bilibili.com/video/BV14Z4y1u7pi?p=15&spm_id_from=pageDriver&vd_source=874ef91701c817855be9727acd96b7cd
+## TYPESCRIPT 类型注解 
+
+
+[TypeScrpit官网](https://www.typescriptlang.org/)
+
+[TypeScript参考教程](https://docs.cocos.com/creator/manual/zh/scripting/language-support.html)
+
+[B站学习视频](https://www.bilibili.com/video/BV14Z4y1u7pi?p=15&spm_id_from=pageDriver&vd_source=874ef91701c817855be9727acd96b7cd)
 ---
 # 运行TS的步骤  
 
@@ -375,10 +381,8 @@ Record<Keys,Type>: **构造一个对象类型，属性键位Keys,属性类型为
 *italic*
 **bold**
 
-![目标文本](目标地址)
-
 [github](http://github.com)
 
-first header |second header
--------------|--------------
-content 1    | content 2
+| first header | second header |
+| ------------ | ------------- |
+| content 1    | content 2     |
